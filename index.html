@@ -1,2 +1,144 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KimBookshop - Buy Books Online</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f5;
+      color: #183c30;
+    }
+    header {
+      background: #173c32;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+    main {
+      max-width: 500px;
+      margin: 25px auto;
+      padding: 20px;
+    }
+    .book {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 12px #0001;
+    }
+    .cover {
+      background: #dcebe2;
+      padding: 35px 10px;
+      border-radius: 8px;
+      font-size: 48px;
+    }
+    .price {
+      font-size: 25px;
+      font-weight: bold;
+      margin: 15px;
+    }
+    button {
+      background: #16834b;
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      padding: 14px;
+      width: 100%;
+      font-size: 17px;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KimBookshop</h1>
+    <p>Discover your next great read</p>
+  </header>
+
+  <main>
+    <section class="book">
+      <div class="cover">📚</div>
+      <h2>CELLMATES</h2>
+      <p>Get your digital book in PDF format.</p>
+      <div class="price">KES 150</div>
+     
+<button onclick="document.getElementById('payment').style.display='block'">
+  Buy CELLMATES - KSh 150
+</button>
+
+<div id="payment" style="display:none; margin-top:20px; text-align:left;">
+  <h3>Pay for CELLMATES</h3>
+  <p>Book price: KSh 150</p>
+  
+<label for="customerName">Your name:</label>
+<input id="customerName" type="text"
+       placeholder="Enter your name" required
+       style="width:100%;padding:10px;box-sizing:border-box;margin:8px 0;">
+
+<label for="customerPhone">Your M-Pesa phone number:</label>
+<input id="customerPhone" type="tel"
+       placeholder="e.g. 0712345678" required
+       style="width:100%;padding:10px;box-sizing:border-box;margin:8px 0;">
+
+<p>Enter your details before continuing to payment.</p>
+
+<button type="button" onclick="submitOrder()">
+  Submit Order
+</button>
+
+<p id="orderMessage" style="margin-top:12px;"></p>
+
+<script>
+function submitOrder() {
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const message = document.getElementById("orderMessage");
+
+  if (!name || !phone) {
+    message.textContent = "Please enter your name and phone number.";
+    return;
+  }
+
+
+const text = "Hello, I want to buy CELLMATES for KSh 150.\n" +
+  "Name: " + name + "\n" +
+  "M-Pesa phone: " + phone + "\n" +
+  "Please tell me how to submit my payment confirmation.";
+
+message.innerHTML =
+  'Order prepared. <a href="https://wa.me/254741613018?text=' +
+  encodeURIComponent(text) +
+  '" target="_blank" rel="noopener">Send order on WhatsApp</a>';
+
+}
+</script>
+
+  <p>Pay using Pochi la Biashara.</p>
+  <p>Payment number: <strong>0741613018</strong></p>
+  <p>After paying, contact us on WhatsApp at 0741613018
+  with your M-Pesa transaction code.</p>
+  <p>Your download will be provided only after payment is verified.</p>
+  <a href="https://wa.me/254741613018?text=Hello%2C%20I%20have%20paid%20KSh%20150%20for%20CELLMATES.%20Please%20verify%20my%20payment."
+     target="_blank" rel="noopener">
+    Submit payment for verification on WhatsApp
+  </a>
+</div>
+
+    </section>
+  </main>
+
+  <footer>
+    Contact: 0741613018<br>
+    © 2026 KimBookshop
+  </footer>
+</body>
+</html>
   
